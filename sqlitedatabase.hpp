@@ -9,4 +9,7 @@ class SQLiteDatabase
 {
 public:
     SQLiteDatabase(const std::string&);
+    void open_db(const std::string&);
+private:
+    sqlite3 *db;
 };
