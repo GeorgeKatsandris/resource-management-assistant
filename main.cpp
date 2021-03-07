@@ -1,9 +1,6 @@
-#include <iostream>
-
-using namespace std;
+#include "main.hpp"
 
 int main()
 {
-    cout << "Hello World!" << endl;
-    return 0;
+    SQLiteDatabase db("test.db");
 }
