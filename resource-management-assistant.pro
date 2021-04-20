@@ -16,3 +16,5 @@ OBJECTS_DIR = build/obj/
 HEADERS += \
     main.hpp \
     sqlitedatabase.hpp
+
+STATECHARTS +=
