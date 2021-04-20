@@ -5,15 +5,16 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
+#include <vector>
 
 #define MULTI_LINE_STRING(...) #__VA_ARGS__
 #define RUN_MULTI_LINE_QUERY(...) run_query(#__VA_ARGS__)
 
-class SQLiteDatabase
+class SQLiteDB
 {
 public:
-    SQLiteDatabase(const std::string&);
-    ~SQLiteDatabase();
+    SQLiteDB(const std::string&);
+    ~SQLiteDB();
 
     void run_query(const std::string&);
 private:

@@ -8,13 +8,13 @@ LIBS += \
 
 SOURCES += \
         main.cpp \
-        sqlitedatabase.cpp
+        sqlitedb.cpp
 
 DESTDIR = build/
 OBJECTS_DIR = build/obj/
 
 HEADERS += \
     main.hpp \
-    sqlitedatabase.hpp
+    sqlitedb.hpp
 
 STATECHARTS +=

@@ -2,6 +2,6 @@
 
 int main()
 {
-    SQLiteDatabase db("test.db");
+    SQLiteDB db("test.db");
 
 }

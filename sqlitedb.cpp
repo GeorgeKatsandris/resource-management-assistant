@@ -1,18 +1,17 @@
-#include "sqlitedatabase.hpp"
+#include "sqlitedb.hpp"
 
-SQLiteDatabase::SQLiteDatabase(const std::string& db_filename) : db_name(db_filename)
+SQLiteDB::SQLiteDB(const std::string& db_filename) : db_name(db_filename)
 {
     open_db();
-    create_tables();
 }
 
-SQLiteDatabase::~SQLiteDatabase()
+SQLiteDB::~SQLiteDB()
 {
     close_db();
     delete_db();
 }
 
-void SQLiteDatabase::open_db()
+void SQLiteDB::open_db()
 {
     if (sqlite3_open(db_name.c_str(), &db))
     {
@@ -25,19 +24,19 @@ void SQLiteDatabase::open_db()
     }
 }
 
-void SQLiteDatabase::close_db()
+void SQLiteDB::close_db()
 {
     sqlite3_close(db);
     std::cout << "Closed database " << db_name << std::endl;
 }
 
-void SQLiteDatabase::delete_db()
+void SQLiteDB::delete_db()
 {
     std::filesystem::remove(db_name);
     std::cout << "Deleted database " << db_name << std::endl;
 }
 
-void SQLiteDatabase::run_query(const std::string& query)
+void SQLiteDB::run_query(const std::string& query)
 {
     char *error_msg = 0;
 
@@ -51,7 +50,7 @@ void SQLiteDatabase::run_query(const std::string& query)
     }
 }
 
-void SQLiteDatabase::create_tables()
+void SQLiteDB::create_tables()
 {
     //todo
     //std::cout << "Created tables" << std::endl;
